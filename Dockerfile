@@ -13,4 +13,4 @@ COPY app ./app
 
 EXPOSE 8080
 
-CMD ["uv", "run", "gunicorn", "-b", "0.0.0.0:8080", "app.app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app.app:app"]
