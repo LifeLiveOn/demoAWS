@@ -11,6 +11,6 @@ RUN uv sync --no-dev
 
 COPY app ./app
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["uv", "run", "gunicorn", "-b", "0.0.0.0:8000", "app.app:app"]
+CMD ["uv", "run", "gunicorn", "-b", "0.0.0.0:8080", "app.app:app"]
