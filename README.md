@@ -279,3 +279,5 @@ For a production-ready pipeline, prefer:
 2. App Runner IAM roles instead of runtime AWS access keys
 3. Secrets Manager or SSM Parameter Store for sensitive configuration
 4. Principle of least privilege for every IAM policy
+
+# useful command
