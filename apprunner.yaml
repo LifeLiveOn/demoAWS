@@ -1,9 +1,12 @@
 version: 1.0
-runtime: docker
+runtime: python3
+
 build:
   commands:
     build:
-      - docker build -t flask-app .
+      - pip install uv
+      - uv sync
+
 run:
   command: uv run gunicorn -b 0.0.0.0:8080 app.app:app
   network:
