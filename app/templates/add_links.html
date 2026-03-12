@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Links</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input name="title" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">URL</label>
+        <input name="url" class="form-control">
+    </div>
+
+    <button class="btn btn-primary">
+        Add Link
+    </button>
+
+</form>
+
+<hr class="my-4">
+
+<h4>Existing Links</h4>
+{% for link in links %}
+<div class="d-flex justify-content-between align-items-center border rounded p-2 mb-2">
+    <div>
+        <div class="fw-semibold">{{ link.title }}</div>
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.url }}</a>
+    </div>
+    <a href="/{{ username }}/links/{{ link.link_id }}/edit" class="btn btn-outline-secondary btn-sm">Edit</a>
+</div>
+{% else %}
+<p class="text-muted">No links yet.</p>
+{% endfor %}
+
+{% endblock %}

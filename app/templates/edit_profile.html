@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input class="form-control" value="{{ user.username }}" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Bio</label>
+        <textarea name="bio" class="form-control" rows="3">{{ user.bio }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Profile Picture</label>
+        <input type="file" name="profile_image" accept="image/*" class="form-control">
+    </div>
+
+    {% if user.profile_image_url %}
+    <div class="mb-3">
+        <img src="{{ user.profile_image_url }}" alt="Current profile image" class="rounded-circle" width="100"
+            height="100" style="object-fit: cover;">
+    </div>
+    {% endif %}
+
+    <button class="btn btn-primary">Save Changes</button>
+    <a href="/{{ user.username }}" class="btn btn-outline-secondary">Cancel</a>
+
+</form>
+
+{% endblock %}
