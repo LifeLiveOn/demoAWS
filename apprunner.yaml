@@ -1,0 +1,10 @@
+version: 1.0
+runtime: docker
+build:
+  commands:
+    build:
+      - docker build -t flask-app .
+run:
+  command: uv run gunicorn -b 0.0.0.0:8080 app.app:app
+  network:
+    port: 8080
