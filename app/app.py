@@ -10,4 +10,4 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "dev")
 app.register_blueprint(routes)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port="8080")

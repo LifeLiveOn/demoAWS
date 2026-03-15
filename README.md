@@ -281,3 +281,7 @@ For a production-ready pipeline, prefer:
 4. Principle of least privilege for every IAM policy
 
 # useful command
+aws ecr create-repository \
+  --repository-name my-repo \
+  --region us-east-1
+
