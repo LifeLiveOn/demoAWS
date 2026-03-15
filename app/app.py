@@ -6,7 +6,8 @@ from app.routes import routes
 load_dotenv()
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "dev")
+app.config["SECRET_KEY"] = os.getenv(
+    "SECRET_KEY", "devfsdfsdfdskcvbp523sfsdfsdf*#hsety03kns")
 app.register_blueprint(routes)
 
 if __name__ == '__main__':
